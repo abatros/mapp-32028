@@ -1,0 +1,104 @@
+vbox, .vbox {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+hbox, .hbox {
+  display:flex;
+  -flex-direction: row;
+  flex-flow: row nowrap;
+  margin:0; padding:0;
+}
+
+.ql {text-align:left;}
+.qr {text-align:right;}
+.qc {text-align:center; justify-content:center;}
+.qj {
+  text-align:justify;
+  justify-content: space-between !important;
+}
+
+.css-mobile, .css-desktop1 {
+  display:none;
+}
+
+.fixed-top {
+  position:fixed;
+  top:0;
+  width: 100vw;
+  z-index:100;
+}
+
+.border-bottom {
+  border-bottom: 0.1rem solid rgba(65,65,65,0.12);
+}
+
+.gray {color: #9B9B9B;}
+
+
+
+
+.nodisplay, .no-display {
+  display:none !important;
+}
+
+.hidden {visibility:hidden;}
+.pink {background-color:pink;}
+.lightgreen {background-color:lightgreen;}
+.yellow {background-color:yellow;}
+
+
+a {
+  text-decoration:none;
+}
+
+
+
+
+.frame {
+  border: 1px solid black;
+}
+.dash-frame {
+  border: 1px dashed gray;
+}
+.noframe {
+  border: 1px solid transparent;
+}
+
+
+
+@media (pointer:none), (pointer:coarse) {
+  .mobile-detection {
+    background-color: red;
+  }
+}
+
+.news-item {
+}
+
+pp {
+font-size: 0.6rem;
+line-height:1.2em;
+}
+
+.ama {
+  color:#A62C07;
+  }
+
+.bkg-ama {
+  background-color:#A62C07;
+}
+
+.button {
+  cursor:pointer;
+}
+
+
+
+
+
+.frame-it {
+  border: 1px dashed blue;
+}

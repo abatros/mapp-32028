@@ -1,0 +1,13 @@
+.cc-typeahead {
+	_width:500px;
+  width:90%;
+  padding: 8px 12px; line-height:30px;
+	font-size:14px; font-family:Arial;
+	border:2px solid #CCC; border-radius:8px;
+	outline:none;
+	background-color: transparent;
+  margin-bottom:0px;
+}
+.cc-typeahead:focus {
+  border: 2px solid #0097cf;
+}

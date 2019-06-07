@@ -1,0 +1,135 @@
+<head>
+  <style>
+    #deep-search h4 {
+      font-family:helvetica;
+      font-size:1.0rem;
+      margin:0; padding:0;
+    }
+
+    #deep-search em {
+      color:blue;
+      font-weight:bold;
+    }
+
+
+  </style>
+</head>
+
+<template name="banner_jpc_catalogs">
+  <hbox class="qc"
+  style="height:2.5rem;
+    margin:0; padding:0px;
+    margin-bottom:0rem;
+    line-height:2.5rem;
+    font-size:1.0rem; font-weight:999;
+    background-color:rgba(230,230,230,0.95);
+    color:brown;
+  ">JPC France Catalogues V2
+  </hbox>
+</template>
+
+<template name="deep-search">
+<div id="deep-search"
+    style="
+        max-width:600px; margin:0 auto;
+        display:flex; flex-direction:column;
+        background-color: rgb(250,250,250);
+        position:absolute;
+        top:0; left:0; right:0; bottom:0;
+        _height:700px;
+        _height:100vh;
+  ">
+  <vbox>
+    {{> banner_jpc_catalogs}}
+  </vbox>
+
+  <div id="scrolling-panel"
+    style= "
+        height:100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    "
+  >
+
+  <div id="search-input"
+    class=""
+    style="
+        min_height:20px;
+        padding:8px;
+  ">
+    <hbox class="top-infos"
+      style="
+          margin-bottom:3px; font-size:0.8rem; padding:0.3rem;
+    ">
+    <div class="js-clear-search-results" style="cursor:pointer;font-weight:bold;margin-right:10px;">[ CLEAR ]</div>
+    <div class="css-mobile">mobile</div>
+    <div class="css-desktop1">desktop1</div>
+    <div class="js-busy-flag hidden">SEARCHING...</div>
+    <div style="margin-left:auto">
+      {{#if subIndex_Count}}
+      <b style="color:brown;">DEEP-SEARCH</b> &mdash;
+      <span class="js-max_results_reached nodisplay" style="margin:0;padding:0;">{{_ 'over-500'}} </span>{{subIndex_Count.get}} {{_ 'entries'}}
+      {{else}}
+      {{#if show_intro}}
+      {{else}}
+      Aucun résultat.
+      {{/if}}
+      {{/if}}
+    </div>
+  </hbox>
+
+  <vbox>
+    <input type="text" class="cc-typeahead js-deep-search"
+      placeholder="{{_ 'deep-search-on-pdf' pdfpagesCount }}"
+      onfocus="this.placeholder = ''"
+      onblur="this.placeholder = '{{_ 'deep-search-on-pdf' pdfpagesCount }}'"
+    />
+  </vbox>
+
+  <div style="display:none;
+      margin:15px 0 0 0;
+      font-size:12pt; font-family:Lato; _font-style:italic;
+      display:flex; justify-content: space-between;
+      width:100%;
+      _border:1px dashed red;">
+  </div>
+
+  </div>
+
+
+  {{#each it in subIndex}}
+  <div style="border-bottom:1px solid darkgray; padding-bottom:5px;margin:5px;">
+  <h4 style="margin:0px;">
+    <a href='http://museum-assets.ultimheat.com/pdf-www/{{it.url}}#page={{it.pageno}}&view=FitH,top'
+      target="anotherTab"
+      title="Article"
+    ><code>{{it.item_id}}</code>
+  </a>
+    rank:{{it.rank}}
+  </h4>
+  <h4 style="color:brown;">
+    <a title="Table-of-content for catalog {{it.item_id}}" href=/toc/{{it.item_id}}>{{it.h1}}</a>
+  </h4>
+  <h4 style="color:blue; padding:0; margin:0; line-height:16px;">{{it.path}} &ndash; {{it.h2}} /page: {{it.pageno}}</h4>
+  <p class="digest">{{{it.headline}}}</p>
+  </div>
+  {{/each}}
+  </div>
+
+  <div class="chat-footer frame"
+    style="
+        min_height:20px;
+        _padding:8px;
+        padding:0; margin:0;
+        _box-sizing: content-box;
+    "
+  >
+  nav-bottom
+  </div>
+
+  <button __onclick="topFunction()" id="myBtn" class="xback2top" title="Go to top">Top</button>
+
+
+</div>
+</template>

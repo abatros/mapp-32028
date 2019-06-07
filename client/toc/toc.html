@@ -1,0 +1,18 @@
+<template name="toc">
+<div class="toc" style="margin:20px;">
+  <h2>table of content</h2>
+  {{#each cat in toc}}
+  <div>
+    <h3>{{cat.icat}} -- {{cat.h1}}</h3>
+    {{#each section in cat.items}}
+    <div>
+      &mdash;
+      <span style="color:rgb(100,0,250)">{{section.path}} {{section.h2}}</span>
+      => {{section.revision_id}}@{{section.item_id}}
+      <span style="color:green;">[{{section.name}}]</span>
+    </div>
+    {{/each}}
+  </div>
+  {{/each}}
+</div>
+</template>

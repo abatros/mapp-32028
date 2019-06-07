@@ -1,0 +1,67 @@
+@media screen and (max-width: 360px) {
+  /*
+      This will cover Oppo A71 width:360px
+  */
+html {
+  font-family: roboto;
+  font-size:10px;
+  _line-height:13px;
+  margin:0; padding:0;
+}
+body {
+  margin:0; padding:0;
+  _overscroll-behavior: contain;
+  --overflow-y:hidden;
+}
+}
+
+
+@media screen and (min-width: 361px) {
+/*
+    This will not affect Oppo A71
+*/
+html {
+  font-size:14px;
+  _line-height:1.3em;
+  -font-family: helvetica;
+  _max-width:800px;
+  background-color: rgb(230,255,230);
+  __margin:0;
+  __padding:0;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+body {
+  max-width:700px;
+  margin:0; padding:0;
+  --overscroll-behavior: contain;
+  --overflow-y:hidden;
+}
+}
+
+@media screen and (min-width: 1000px) {
+/*
+    This will not affect Oppo A71
+*/
+html {
+  font-size:16px;
+  background-color: rgb(230,255,230);
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+body {
+  max-width:1000px;
+  margin:0; padding:0;
+  overscroll-behavior: contain;
+  --overflow-y:hidden;
+}
+}
+
+
+p.digest {
+  -font-family:times;
+  font-size:1.0rem;
+  line-height: 1.5em;
+}
